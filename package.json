@@ -1,0 +1,32 @@
+{
+  "name": "ws-ftp-streming",
+  "version": "1.0.0",
+  "description": "A Node.Js Streming Server",
+  "main": "index.js",
+  "bin": {
+    "ws-ftp-streming": "server.js"
+  },
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TTOExtreme/WS-FTP-Streming.git"
+  },
+  "author": "TTOExtreme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TTOExtreme/WS-FTP-Streming/issues"
+  },
+  "homepage": "https://github.com/TTOExtreme/WS-FTP-Streming#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "node-media-server": "^2.1.3",
+    "path": "^0.12.7",
+    "randomstring": "^1.1.5",
+    "rtmp-server": "^0.2.0",
+    "util": "^0.12.1"
+  }
+}
