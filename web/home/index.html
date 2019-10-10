@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./home/css/default-style.css">
+    <link rel="stylesheet" type="text/css" href="./home/css/index.css">
+    <script type="text/javascript" src="./home/js/index.js"></script>
+</head>
+
+<body>
+    <nav class="header">
+        <center>
+            <table class="header_table">
+                <tr>
+                    <td>
+                        <div class="header_button" onclick='OpenHome()'>
+                            <div>Home</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="header_button" onclick='OpenLogin()'>
+                            <div>Login</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="header_button" onclick='OpenLista()'>
+                            <div>Lista</div>
+                        </div>
+                    </td>
+            </table>
+        </center>
+    </nav>
+    <nav class="nav_last_cast">
+        <center>
+            <div class="row">
+                <div id="last_cast" class="last_cast_div col-1" style="background-image: url('./img/img.png');">
+                    <div class="last_cast">
+                        <table style="width: calc(100% - 25px);">
+                            <tr>
+                                <td>Titulo</td>
+                            </tr>
+                            <tr>
+                                <td>Breve Texto explicativo</td>
+                            </tr>
+                        </table>
+                        <div class="play_on_img"><img src="./home/img/play.png" width="30px"></div>
+                    </div>
+                </div>
+                <div id="old_cast-1" class="old_cast_div col-2" style="background-image: url('./img/img.png');">
+                    <div class="old_cast">
+                        <table style="width: calc(100% - 25px);">
+                            <tr>
+                                <td>Titulo 1</td>
+                            </tr>
+                            <tr>
+                                <td>Breve Texto explicativo</td>
+                            </tr>
+                        </table>
+                        <div class="play_on_img"><img src="./home/img/play.png" width="30px"></div>
+                    </div>
+                </div>
+                <div id="old_cast-2" class="old_cast_div col-2" style="background-image: url('./img/img.png');">
+                    <div class="old_cast">
+                        <table style="width: calc(100% - 25px);">
+                            <tr>
+                                <td>Titulo 1</td>
+                            </tr>
+                            <tr>
+                                <td>Breve Texto explicativo</td>
+                            </tr>
+                        </table>
+                        <div class="play_on_img"><img src="./home/img/play.png" width="30px"></div>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </nav>
+    <nav class="old_cast">
+        <div id="old_cast"></div>
+    </nav>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+:root {
+    --c1-u:#b549ca;
+    --c1:#7a3887;
+    --c1-d:#582563;
+
+    --c2-u:#1cdfb1;
+    --c2:#169e7e;
+    --c2-d:#276859;
+
+    --c3-u:#00eee9;
+    --c3:#02a7a4;
+    --c3-d:#006d6b;
+
+    --back-color: #dddddd;
+    --font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --header-bg:var(--c1);
+    --header-button-bg:var(--c3);
+    --header-buton-tx:#202020;
+    --header-button-bg-hover:var(--c3-d);
+    --header-buton-tx-hover:var(--c2-u);
+}

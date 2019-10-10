@@ -1,0 +1,110 @@
+body{
+    margin:0;
+    background-color: var(--back-color);
+}
+.header{
+    position: absolute;
+    width: 100vw;
+    top:0px;
+    height: 30px;
+    background-color: var(--header-bg);
+}
+.header_table{
+    border-collapse: collapse;
+}
+.header_button{
+    cursor: pointer;
+    margin-top:4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 20px;
+    line-height: 20px;
+    width: 120px;
+    background-color: var(--header-button-bg);
+    color: var(--header-buton-tx);
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 0px;
+}
+.header_button:hover{
+    margin-top:0px;
+    height: 30px;
+    line-height: 30px;
+    width: 120px;
+    background-color: var(--header-button-bg-hover);
+    color: var(--header-buton-tx-hover);
+    transition-property: all;
+    transition-duration: 0.5s;
+    border-radius: 5px;
+}
+/*Content Redraw for mobile/Desktop*/
+* {
+    box-sizing: border-box;
+  }
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+  
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+/* For desktop: */
+.col-1 {width: 50%;}
+.col-2 {width: 25%;}
+.col-3 {width: 100%;}
+
+@media only screen and (max-width: 720px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    margin: auto;
+    width: 100%;
+  }
+}
+/*end of Content Redraw for mobile/Desktop*/
+
+.nav_last_cast{
+    margin: 50px;
+}
+
+.last_cast{
+    width: 100%;
+}
+.last_cast_div{
+    background-size: cover;
+    position: relative;
+    max-width: 600px;
+    min-width: 250px;
+    height: 300px;
+    border: 1px solid #ca6d20;
+    border-radius: 25px;
+    margin-right:20px;
+    margin-bottom:20px;
+}
+.cast_bg_img{
+    width: 100%;
+    height: auto;
+}
+
+.old_cast{
+    widows: 100%;
+}
+.old_cast_div{
+    background-size: cover;
+    position: relative;
+    max-width: 600px;
+    min-width: 250px;
+    height: 150px;
+    border: 1px solid #ca6d20;
+    border-radius: 25px;
+    margin-bottom:5px;
+    margin-right:5px;
+}
+
+.play_on_img{
+    position: absolute;
+    bottom: 4px;
+    right: 10px;
+}
