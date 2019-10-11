@@ -50,15 +50,22 @@ body{
   
 [class*="col-"] {
     float: left;
-    padding: 15px;
+    /* padding: 15px; */
 }
 /* For desktop: */
 .col-1 {width: 50%;}
-.col-2 {width: 24%;}
-.col-3 {width: 100%;}
+.col-2 {width: calc(25% - 15px);height: 300px;}    
+.col-3 {width: 100%; height: 150px;}
+.col-4 {width: 100%;height: 150px;}
 
 @media only screen and (max-width: 720px) {
   /* For mobile phones: */
+  [class*="col-1"] {
+    height:300px;
+  }
+  [class*="col-2"] {
+    height:150px;
+  }
   [class*="col-"] {
     margin: auto;
     width: 100%;
@@ -94,6 +101,13 @@ body{
     transition-property: all;
     transition-duration: 0.8s;
 }
+.list_cast_title{
+  font-size: 16pt;
+  position: absolute;
+  top: 40px;
+  left: 180px;
+}
+
 .cast_bg_img{
     width: 100%;
     height: auto;
@@ -113,8 +127,8 @@ body{
     background-size: cover;
     position: relative;
     max-width: 600px;
-    min-width: 250px;
-    height: 150px;
+    /* min-width: 250px; */
+    /* height: 150px; */
     border-radius: 25px;
     margin-top: 10px;
     margin-right:5px;
@@ -124,7 +138,53 @@ body{
     transition-duration: 0.8s;
 }
 
-.last_cast_div:hover,.old_cast_div:hover{
+
+
+.list_cast{
+    width: calc(100% - 160px);
+    bottom: 0;
+    position: absolute;
+    left: 160px;
+    background-color: #101010f0;
+    color: white;
+    font-size: 10pt;
+    height: 60px;
+    border-radius: 25px 0px 0px 0px;
+    padding-top: 5px;
+}
+.list_cast_div{
+    overflow: hidden;
+    background-color: #c5c1c1f0;
+    position: relative;
+    /* max-width: 600px; */
+    min-width: 250px;
+    height: 170px;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-right:5px;
+    border: 5px solid #e0e0e0;
+    box-shadow: -5px 5px 3px #30303050;
+    transition-property: all;
+    transition-duration: 0.8s;
+}
+.list_cast_img{
+    /* overflow: hidden; */
+    padding: 0;
+    background-size: cover;
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 25px;
+    margin-top: 5px;
+    margin-left: 5px;
+    left: 0;
+    border: 5px solid #e0e0e0;
+    box-shadow: -5px 5px 3px #30303050;
+    transition-property: all;
+    transition-duration: 0.8s;
+}
+
+.last_cast_div:hover,.old_cast_div:hover,.list_cast_img:hover{
     opacity: 0.8;
 }   
 
@@ -133,7 +193,7 @@ body{
     opacity: .5;
     left: 50%;
     bottom: 50%;
-    transform: translate(-3.5em, 2.5em);
+    transform: translate(-50px, 50px);
     background-color: #303030a0;
     border-radius: 50px;
     padding: 10px;
