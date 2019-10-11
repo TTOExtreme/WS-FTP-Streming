@@ -14,7 +14,8 @@ function init() {
 
 
     app.use('/home/', express.static(path.join(__dirname + '/../web/home/')));
-    app.use('/img/', express.static(path.join(__dirname + '/../ftp/teste/')));
+    //app.use('/img/', express.static(path.join(__dirname + '/../ftp/teste/')));
+    app.use('/data/', express.static(path.join(__dirname + '/../ftp/')));
     //app.use('/data/', require("./routes").routes());
     app.get('/list', require("./list"));
 

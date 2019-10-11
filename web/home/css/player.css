@@ -1,0 +1,28 @@
+.pl_ScrollBar {
+    --scroll: 0%;
+    background: linear-gradient(to right,rgb(152, 228, 208) var(--scroll),transparent 0);
+    width: 80vw;
+    height: 15px;
+    top: 0px;
+    z-index: 100;
+}
+.pl_ScrollBar_holder{
+    background-color: #113311;
+    height:15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.player{
+    background-color: var(--c2);
+    padding: 5px;
+    position: fixed;
+    bottom: -100%;
+    width: 100%;
+    transition-property: all;
+    transition-duration: 0.8s;
+}
+.pl_title{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}

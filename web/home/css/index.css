@@ -1,36 +1,36 @@
 body{
     margin:0;
     background-color: var(--back-color);
+    font-family:sans-serif;
 }
 .header{
-    position: absolute;
+    position: fixed;
     width: 100vw;
     top:0px;
     height: 30px;
     background-color: var(--header-bg);
+    z-index: 1000;
 }
 .header_table{
     border-collapse: collapse;
 }
 .header_button{
+    border-radius: 5px;
     cursor: pointer;
     margin-top:4px;
     margin-left: 10px;
     margin-right: 10px;
     height: 20px;
     line-height: 20px;
-    width: 120px;
+    width: 90px;
     background-color: var(--header-button-bg);
     color: var(--header-buton-tx);
     text-align: center;
+    font-size: 10pt;
     vertical-align: middle;
-    border-radius: 0px;
+    border-radius: 5px;
 }
 .header_button:hover{
-    margin-top:0px;
-    height: 30px;
-    line-height: 30px;
-    width: 120px;
     background-color: var(--header-button-bg-hover);
     color: var(--header-buton-tx-hover);
     transition-property: all;
@@ -44,7 +44,8 @@ body{
 .row::after {
     content: "";
     clear: both;
-    display: block;
+    display:inline-block;
+    align-self: center;
 }
   
 [class*="col-"] {
@@ -53,7 +54,7 @@ body{
 }
 /* For desktop: */
 .col-1 {width: 50%;}
-.col-2 {width: 25%;}
+.col-2 {width: 24%;}
 .col-3 {width: 100%;}
 
 @media only screen and (max-width: 720px) {
@@ -71,17 +72,27 @@ body{
 
 .last_cast{
     width: 100%;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    background-color: #101010c0;
+    color: white;
+    font-size: 10pt;
 }
 .last_cast_div{
+    overflow: hidden;
     background-size: cover;
     position: relative;
     max-width: 600px;
     min-width: 250px;
     height: 300px;
-    border: 1px solid #ca6d20;
+    border: 5px solid #e0e0e0;
+    box-shadow: -5px 5px 3px #30303050;
     border-radius: 25px;
     margin-right:20px;
-    margin-bottom:20px;
+    margin-top: 10px;
+    transition-property: all;
+    transition-duration: 0.8s;
 }
 .cast_bg_img{
     width: 100%;
@@ -89,22 +100,48 @@ body{
 }
 
 .old_cast{
-    widows: 100%;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    background-color: #101010f0;
+    color: white;
+    font-size: 10pt;
 }
 .old_cast_div{
+    overflow: hidden;
     background-size: cover;
     position: relative;
     max-width: 600px;
     min-width: 250px;
     height: 150px;
-    border: 1px solid #ca6d20;
     border-radius: 25px;
-    margin-bottom:5px;
+    margin-top: 10px;
     margin-right:5px;
+    border: 5px solid #e0e0e0;
+    box-shadow: -5px 5px 3px #30303050;
+    transition-property: all;
+    transition-duration: 0.8s;
 }
+
+.last_cast_div:hover,.old_cast_div:hover{
+    opacity: 0.8;
+}   
 
 .play_on_img{
     position: absolute;
-    bottom: 4px;
-    right: 10px;
+    opacity: .5;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-3.5em, 2.5em);
+    background-color: #303030a0;
+    border-radius: 50px;
+    padding: 10px;
+    padding-bottom: 6px;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.play_on_img:hover{
+    opacity: 1;
 }
