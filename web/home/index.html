@@ -7,26 +7,30 @@
     <link rel="stylesheet" type="text/css" href="./home/css/index.css">
     <script type="text/javascript" src="./home/js/player.js"></script>
     <script type="text/javascript" src="./home/js/index.js"></script>
+    <script type="text/javascript" src="./login/js/crypto-js.js"></script>
+    <script type="text/javascript" src="./login/js/bcypher.js"></script>
+    <script type="text/javascript" src="./login/js/index.js"></script>
+    <script type="text/javascript" src="./login/js/cookie.js"></script>
 </head>
 
 <body>
     <nav class="header">
         <center>
-            <table class="header_table">
-                <tr>
+            <table id="header_table" class="header_table">
+                <tr id="header_table_tr">
                     <td>
-                        <div class="header_button" onclick='OpenHome()'>
+                        <div id='home_button' class="header_button" onclick='OpenHome()'>
                             <div>Home</div>
                         </div>
                     </td>
                     <td>
-                        <div class="header_button" onclick='OpenLogin()'>
-                            <div>Login</div>
+                        <div id='list_button' class="header_button" onclick='OpenLista()'>
+                            <div>Lista</div>
                         </div>
                     </td>
                     <td>
-                        <div class="header_button" onclick='OpenLista()'>
-                            <div>Lista</div>
+                        <div id='login_button' class="header_button" onclick='OpenLogin()'>
+                            <div>Login</div>
                         </div>
                     </td>
             </table>

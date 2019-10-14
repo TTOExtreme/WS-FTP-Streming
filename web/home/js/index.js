@@ -1,13 +1,22 @@
 function OpenHome() {
-
+    window.location = "/";
 }
 
 function OpenLista() {
-
+    window.location = "/lista";
 }
 
 function OpenLogin() {
+    window.location = "/login";
+}
 
+function OpenUpload() {
+    window.location = "/upload";
+}
+
+function Logout() {
+    ck_kill();
+    window.location = "/";
 }
 
 function InitHome() {
@@ -99,4 +108,15 @@ function getJSON(url, callback) {
     };
     xhr.send();
 };
+
+function getJS(url, callback) {
+    var script = document.createElement('script');
+    script.onload = function () {
+        callback();
+    };
+    script.src = url;
+
+    document.head.appendChild(script);
+}
+
 InitHome();
