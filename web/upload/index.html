@@ -5,17 +5,18 @@
     <link rel="stylesheet" type="text/css" href="./css/default-style.css">
     <link rel="stylesheet" type="text/css" href="./css/player.css">
     <link rel="stylesheet" type="text/css" href="./css/index.css">
-    <script type="text/javascript" src="./js/crypto-js.js"></script>
-    <script type="text/javascript" src="./js/bcypher.js"></script>
+    <script type="text/javascript" src="../login/js/crypto-js.js"></script>
+    <script type="text/javascript" src="../login/js/bcypher.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
-    <script type="text/javascript" src="./js/cookie.js"></script>
+    <script type="text/javascript" src="../login/js/index.js"></script>
+    <script type="text/javascript" src="../login/js/cookie.js"></script>
 </head>
 
 <body>
     <nav class="header">
         <center>
-            <table id='header_table' class="header_table">
-                <tr>
+            <table id="header_table" class="header_table">
+                <tr id="header_table_tr">
                     <td>
                         <div id='home_button' class="header_button" onclick='OpenHome()'>
                             <div>Home</div>
@@ -34,29 +35,38 @@
             </table>
         </center>
     </nav>
-    <nav class="login_holder">
+    <nav class="upload_holder">
         <center>
-            <div id="login" class="login">
-                <table>
+            <div id="upload" class="upload">
+                <table class="upload_table">
                     <tr>
                         <td>
                             <center>
-                                <input id="user_input" type='text' placeholder="Usuário">
+                                <input class="upload_inputs" id="title_input" type='text' placeholder="Título">
                             </center>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <center>
-                                <input id="pass_input" type='password' placeholder="Senha">
+                                <input class="upload_inputs" id="description_input" type='text' placeholder="Descrição">
                             </center>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <center>
-                                <div class="header_button" onclick='Login()'>
-                                    <div>Login</div>
+                                Substituir Principal: <input class="upload_check" id="biggerbox_input" type='checkbox'>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <div id="drop-area" class="drop_region" ondrop="dropFile(event)"
+                                    ondragover="dragFile(event);" onclick="clickFile()">
+                                    Solte o Arquivo de audio aqui
+                                    Ou clique para selecionar um.
                                 </div>
                             </center>
                         </td>
@@ -64,7 +74,27 @@
                     <tr>
                         <td>
                             <center>
-                                <pre class="login_msg" id="login_msg"></pre>
+                                <div id="drop-area-img" class="drop_region" ondrop="dropFileImg(event)"
+                                    ondragover="dragFile(event);" onclick="clickFileImg()">
+                                    Solte o Arquivo de Imagem aqui
+                                    Ou clique para selecionar um.
+                                </div>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <div class="header_button" onclick='uploadData()'>
+                                    <div>Upload</div>
+                                </div>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <pre class="uploading_msg" id="uploading_text"></pre>
                             </center>
                         </td>
                     </tr>
@@ -72,6 +102,9 @@
             </div>
         </center>
     </nav>
+    <script>
+        initUploadArea();
+    </script>
 </body>
 
 </html>

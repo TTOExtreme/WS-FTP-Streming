@@ -13,4 +13,18 @@ create table _Users(
     lastLogin VARCHAR(100)
     
     );
+create table _Podcasts(
+	id INT(10) primary key auto_increment,
+    title VARCHAR(400),
+    description VARCHAR(4096),
+    biggerbox int(1),
+    folder varchar(64)
+    
+    );
+
+update WS_Podcast._Podcasts set biggerbox=0 where biggerbox=1;
+
+insert into WS_Podcast._Users (user,username,pass) value('admin','Administrador','857b47cfadee1b62e6057c23d3cb880e7d5c5c19edcd95c71d3a0b4a0164c21445d3afa8acecc86099d54c9696db0e5a953634b44b1652fbdf5838bff97f3d4b');
+    
+
     

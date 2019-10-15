@@ -13,10 +13,10 @@ function pl_Init() {
     document.getElementById("pl_ScrollBar").addEventListener("click", seek);
 }
 
-function playfile(title) {
+function playfile(title, folder) {
     document.getElementById("player").style.bottom = "0px";
     pl_title.innerText = title;
-    pl_source.setAttribute("src", "./data/" + title.replace(new RegExp(" ", "g"), "-") + "/audio.mp3");
+    pl_source.setAttribute("src", "./data/" + folder + "/audio.mp3");
     pl_instance.load();
     pl_instance.play();
     pl_playbutton.setAttribute("src", "./home/img/pause.png");

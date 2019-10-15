@@ -59,5 +59,10 @@ function loginMsg(msg) {
                 loginMsg("")
             }, 1000);
         }
+    } else {
+        console.log("not valid");
+        if (window.location.pathname.indexOf("/upload") >= 0) {
+            window.location = "/login";
+        }
     }
 }

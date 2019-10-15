@@ -22,31 +22,30 @@ function Logout() {
 function InitHome() {
     let div = document.getElementById("row");
     if (div) {
-        getJSON('./list', function (err, data) {
-            if (err !== null) {
-                alert('Falha ao conectar ao servidor');
-            } else {
-                if (data.data) {
-                    let last = data.data.pop();
-                    last = JSON.parse(last);
-                    div.innerHTML = createCast(last.title, last.descricao, last.title.replace(new RegExp(" ", "g"), "-"), last.title.replace(new RegExp(" ", "g"), "-"), "last_cast_div", "col-1", "last_cast");
-                    let id = 0;
-                    data.data.forEach(e => {
-                        e = JSON.parse(e);
-                        if (id < 12) {
+        //getJSON( function (err, data) {
+        getBiggerBox((data) => {
+            if (data) {
+                let last = data.pop();
+                div.innerHTML = createCast(last.title, last.description, last.folder, last.folder, "last_cast_div", "col-1", "last_cast");
+            }
+        });
+        getList((data) => {
+            if (data) {
+                let id = 0;
+                data.forEach(e => {
+                    if (id < 12) {
+                        if (id < 2) {
+                            div.innerHTML += createCast(e.title, e.description, e.folder, e.folder);
+                        } else {
                             if (id < 2) {
-                                div.innerHTML += createCast(e.title, e.descricao, e.title.replace(new RegExp(" ", "g"), "-"), e.title.replace(new RegExp(" ", "g"), "-"));
+                                div.innerHTML += createCast(e.title, e.description, e.folder, e.folder, "old_cast_div", "col-3", "old_cast");
                             } else {
-                                if (id < 2) {
-                                    div.innerHTML += createCast(e.title, e.descricao, e.title.replace(new RegExp(" ", "g"), "-"), e.title.replace(new RegExp(" ", "g"), "-"), "old_cast_div", "col-3", "old_cast");
-                                } else {
-                                    div.innerHTML += createListCast(e.title, e.descricao, e.title.replace(new RegExp(" ", "g"), "-"), e.title.replace(new RegExp(" ", "g"), "-"));
-                                }
+                                div.innerHTML += createListCast(e.title, e.description, e.folder, e.folder);
                             }
-                            id++;
                         }
-                    });
-                }
+                        id++;
+                    }
+                });
             }
         });
     } else {
@@ -58,7 +57,7 @@ function InitHome() {
 
 function createCast(title, desc, img, audio, clas1 = "old_cast_div", clas2 = "col-2", clas3 = "old_cast") {
     return "" +
-        "<div class=\"" + clas1 + " " + clas2 + "\" style=\"background-image: url('./data/" + img + "/img.png'); \" >" +
+        "<div class=\"" + clas1 + " " + clas2 + "\" style=\"background-image: url('./data/" + img + "/image.png'); \" >" +
         "<div class=\"" + clas3 + "\" >" +
         "<table style=\"width: calc(100% - 25px);\">" +
         "<tr>" +
@@ -69,7 +68,7 @@ function createCast(title, desc, img, audio, clas1 = "old_cast_div", clas2 = "co
         "</tr>" +
         "</table>" +
         "</div >" +
-        "<div class=\"play_on_img\" onclick=\"playfile('" + audio + "')\">" +
+        "<div class=\"play_on_img\" onclick=\"playfile('" + title + "','" + audio + "')\">" +
         "<img src=\"./home/img/play_cast.png\" width=\"80px\">" +
         "</div>" +
         "</div>";
@@ -78,8 +77,8 @@ function createCast(title, desc, img, audio, clas1 = "old_cast_div", clas2 = "co
 function createListCast(title, desc, img, audio) {
     return "" +
         "<div class=\"list_cast_div col-4\">" +
-        "<div class=\"list_cast_img\"style=\"background-image: url('./data/" + img + "/img.png'); \" >" +
-        "<div class=\"play_on_img\" onclick=\"playfile('" + audio + "')\">" +
+        "<div class=\"list_cast_img\"style=\"background-image: url('./data/" + img + "/image.png'); \" >" +
+        "<div class=\"play_on_img\" onclick=\"playfile('" + title + "','" + audio + "')\">" +
         "<img src=\"./home/img/play_cast.png\" width=\"80px\">" +
         "</div>" +
         "</div>" +
@@ -108,6 +107,39 @@ function getJSON(url, callback) {
     };
     xhr.send();
 };
+
+function getBiggerBox(callback) {
+    fetch("./api/listBiggerBox", {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "post",
+        body: JSON.stringify({ offset: 0 })
+    }).then((response) => {
+        if (response.status == 200) {
+            response.json().then(function (json) {
+                callback(json);
+            });
+        }
+    })
+}
+function getList(callback) {
+    fetch("./api/list", {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "post",
+        body: JSON.stringify({ offset: 0 })
+    }).then((response) => {
+        if (response.status == 200) {
+            response.json().then(function (json) {
+                callback(json);
+            });
+        }
+    })
+}
 
 function getJS(url, callback) {
     var script = document.createElement('script');

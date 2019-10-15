@@ -37,9 +37,11 @@ function ck_load_login() {
                         document.getElementById('header_table_tr').appendChild(but);
                     }
                 })
+                return;
             }
         }
     }
+    loginMsg("Cannot find cookie");
 }
 
 function ck_kill() {
