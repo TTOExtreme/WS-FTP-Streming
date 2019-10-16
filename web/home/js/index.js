@@ -1,22 +1,22 @@
 function OpenHome() {
-    window.location = "/";
+    window.location += "";
 }
 
 function OpenLista() {
-    window.location = "/lista";
+    window.location += "lista/";
 }
 
 function OpenLogin() {
-    window.location = "/login";
+    window.location += "login/";
 }
 
 function OpenUpload() {
-    window.location = "/upload";
+    window.location += "upload/";
 }
 
 function Logout() {
     ck_kill();
-    window.location = "/";
+    window.location += "";
 }
 
 function InitHome() {

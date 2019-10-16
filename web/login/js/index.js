@@ -1,13 +1,13 @@
-function OpenHome() {
-    window.location = "/"
+function LoginOpenHome() {
+    window.location += "../"
 }
 
-function OpenLista() {
-    window.location = "/lista"
+function LoginOpenLista() {
+    window.location += "../lista"
 }
 
-function OpenLogin() {
-    window.location = "/login"
+function LoginOpenLogin() {
+    window.location += "../login"
 }
 
 function Login() {
@@ -17,7 +17,7 @@ function Login() {
     Login_Request(data.user, data.pass, (rec) => {
         rec.pass = data.pass;
         ck_new(JSON.stringify(rec), () => {
-            window.location = "/";
+            window.location += "../";
         })
     });
 }
@@ -29,10 +29,13 @@ function Login_Request(user, pass, callback) {
     data["pass"] = pass;
 
 
-    var data1 = new FormData();
+    let data1 = new FormData();
     data1.append("json", JSON.stringify(data));
-
-    fetch("../api/login", {
+    let loc = "./api/login";
+    if (window.location.pathname.indexOf("/login") > 0 || window.location.pathname.indexOf("/upload") > 0) {
+        loc = "../api/login";
+    }
+    fetch(loc, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -62,7 +65,7 @@ function loginMsg(msg) {
     } else {
         console.log("not valid");
         if (window.location.pathname.indexOf("/upload") >= 0) {
-            window.location = "/login";
+            window.location += "../login";
         }
     }
 }

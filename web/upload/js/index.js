@@ -1,18 +1,18 @@
-function OpenHome() {
-    window.location = "/"
+function UploadOpenHome() {
+    window.location = "../"
 }
 
-function OpenLista() {
-    window.location = "/lista"
+function UploadOpenLista() {
+    window.location = "../lista"
 }
 
-function OpenLogin() {
-    window.location = "/login"
+function UploadOpenLogin() {
+    window.location = "../login"
 }
 
 function Logout() {
     ck_kill();
-    window.location = "/";
+    window.location = "../";
 }
 
 
