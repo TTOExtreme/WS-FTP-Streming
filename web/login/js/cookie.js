@@ -45,7 +45,7 @@ function ck_load_login() {
 }
 
 function ck_kill() {
-    document.cookie = "WSPC=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    document.cookie = "WSPC=; expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
 }
 
 ck_load_login();
