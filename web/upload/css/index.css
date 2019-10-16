@@ -44,7 +44,7 @@ body{
     box-shadow: -5px 5px 3px #30303050;
     background-color: #c5c1c1f0;
     border-radius: 25px;
-    transform: translate(calc(50vw - 155px), calc(50vh - 155px));
+    transform: translate(calc(50vw - 205px), calc(50vh - 205px));
 }
 .upload {
     width: 95%;
