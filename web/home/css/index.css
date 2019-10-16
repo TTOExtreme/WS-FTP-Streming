@@ -30,6 +30,22 @@ body{
     vertical-align: middle;
     border-radius: 5px;
 }
+.header_button_disabled{
+    border-radius: 5px;
+    /* cursor: pointer; */
+    margin-top:4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 20px;
+    line-height: 20px;
+    width: 90px;
+    background-color: var(--header-button-bg-disabled);
+    color: var(--header-buton-tx);
+    text-align: center;
+    font-size: 10pt;
+    vertical-align: middle;
+    border-radius: 5px;
+}
 .header_button:hover{
     background-color: var(--header-button-bg-hover);
     color: var(--header-buton-tx-hover);
@@ -204,4 +220,16 @@ body{
 
 .play_on_img:hover{
     opacity: 1;
+}
+
+.navigation_list{
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  /* top: 0px; */
+  height: 35px;
+  background-color: var(--header-bg);
+  /* z-index: 1000; */
+    transition-property: all;
+    transition-duration: 0.8s;
 }

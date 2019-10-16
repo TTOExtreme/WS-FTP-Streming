@@ -12,6 +12,7 @@
     --font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     --header-bg:var(--c1);
     --header-button-bg: var(--c3);
+    --header-button-bg-disabled: var(--c3-d);
     --header-buton-tx: #ffffff;
     --header-button-bg-hover:var(--c3-d);
     --header-buton-tx-hover:var(--c2-u);

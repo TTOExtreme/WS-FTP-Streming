@@ -3,11 +3,11 @@ function UploadOpenHome() {
 }
 
 function UploadOpenLista() {
-    window.location = "../lista"
+    window.location = "../list/"
 }
 
 function UploadOpenLogin() {
-    window.location = "../login"
+    window.location = "../login/"
 }
 
 function Logout() {

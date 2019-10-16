@@ -14,12 +14,22 @@ function pl_Init() {
 }
 
 function playfile(title, folder) {
+    if (document.getElementById("navigation_list")) {
+        document.getElementById("navigation_list").style.bottom = "68px";
+    }
     document.getElementById("player").style.bottom = "0px";
     pl_title.innerText = title;
-    pl_source.setAttribute("src", "./data/" + folder + "/audio.mp3");
+    pl_source.setAttribute("src", ((window.location.pathname.indexOf("list") > 0) ? "." : "") + "./data/" + folder + "/audio.mp3");
     pl_instance.load();
     pl_instance.play();
-    pl_playbutton.setAttribute("src", "./home/img/pause.png");
+    pl_playbutton.setAttribute("src", ((window.location.pathname.indexOf("list") > 0) ? "." : "") + "./home/img/pause.png");
+}
+function playerClose() {
+    pl_instance.pause();
+    if (document.getElementById("navigation_list")) {
+        document.getElementById("navigation_list").style.bottom = "0px";
+    }
+    document.getElementById("player").style.bottom = "";
 }
 
 function calculateScroll() {
@@ -51,10 +61,10 @@ function seek(evt) {
 function pl_play() {
     if (pl_instance.paused) {
         pl_instance.play();
-        pl_playbutton.setAttribute("src", "./home/img/pause.png");
+        pl_playbutton.setAttribute("src", ((window.location.pathname.indexOf("list") > 0) ? "." : "") + "./home/img/pause.png");
     } else {
         pl_instance.pause();
-        pl_playbutton.setAttribute("src", "./home/img/play.png");
+        pl_playbutton.setAttribute("src", ((window.location.pathname.indexOf("list") > 0) ? "." : "") + "./home/img/play.png");
     }
 }
 function pl_Update() {

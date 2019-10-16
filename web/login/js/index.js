@@ -3,11 +3,11 @@ function LoginOpenHome() {
 }
 
 function LoginOpenLista() {
-    window.location += "../lista"
+    window.location += "../list/"
 }
 
 function LoginOpenLogin() {
-    window.location += "../login"
+    window.location += "../login/"
 }
 
 function Login() {
@@ -32,7 +32,9 @@ function Login_Request(user, pass, callback) {
     let data1 = new FormData();
     data1.append("json", JSON.stringify(data));
     let loc = "./api/login";
-    if (window.location.pathname.indexOf("login") > 0 || window.location.pathname.indexOf("upload") > 0) {
+    if (window.location.pathname.indexOf("login") > 0 ||
+        window.location.pathname.indexOf("upload") > 0 ||
+        window.location.pathname.indexOf("list") > 0) {
         loc = "../api/login";
     }
     fetch(loc, {

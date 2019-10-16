@@ -3,7 +3,7 @@ function OpenHome() {
 }
 
 function OpenLista() {
-    window.location += "lista/";
+    window.location += "list/";
 }
 
 function OpenLogin() {

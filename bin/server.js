@@ -20,10 +20,11 @@ function init() {
     app.use('/home/', express.static(path.join(__dirname + '/../web/home/')));
     app.use('/login/', express.static(path.join(__dirname + '/../web/login/')));
     app.use('/upload/', express.static(path.join(__dirname + '/../web/upload/')));
+    app.use('/list/', express.static(path.join(__dirname + '/../web/list/')));
     app.use('/data/', express.static(path.join(__dirname + '/../ftp/')));
     //app.use('/data/', require("./routes").routes());
 
-    app.get('/list', require("./list"));
+    //app.get('/list', require("./list"));
 
 
     app.get('/', (request, response) => {
@@ -34,6 +35,9 @@ function init() {
     });
     app.get('/upload', (request, response) => {
         response.sendFile(path.join(__dirname + '/../web/upload/index.html'))
+    });
+    app.get('/list', (request, response) => {
+        response.sendFile(path.join(__dirname + '/../web/list/index.html'))
     });
 
     app.use('/api/', require("./sql/routes.js"));

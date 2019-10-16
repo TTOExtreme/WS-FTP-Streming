@@ -1,7 +1,7 @@
 .pl_ScrollBar {
     --scroll: 0%;
     background: linear-gradient(to right,rgb(152, 228, 208) var(--scroll),transparent 0);
-    width: 80vw;
+    width: calc(100vw - 290px);
     height: 15px;
     top: 0px;
     z-index: 100;

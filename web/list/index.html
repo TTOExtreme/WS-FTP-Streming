@@ -2,15 +2,15 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="./home/css/default-style.css">
-    <link rel="stylesheet" type="text/css" href="./home/css/player.css">
-    <link rel="stylesheet" type="text/css" href="./home/css/index.css">
-    <script type="text/javascript" src="./home/js/player.js"></script>
-    <script type="text/javascript" src="./home/js/index.js"></script>
-    <script type="text/javascript" src="./login/js/crypto-js.js"></script>
-    <script type="text/javascript" src="./login/js/bcypher.js"></script>
-    <script type="text/javascript" src="./login/js/index.js"></script>
-    <script type="text/javascript" src="./login/js/cookie.js"></script>
+    <link rel="stylesheet" type="text/css" href="../home/css/default-style.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/player.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/index.css">
+    <script type="text/javascript" src="../home/js/player.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript" src="../login/js/crypto-js.js"></script>
+    <script type="text/javascript" src="../login/js/bcypher.js"></script>
+    <script type="text/javascript" src="../login/js/index.js"></script>
+    <script type="text/javascript" src="../login/js/cookie.js"></script>
 </head>
 
 <body>
@@ -36,6 +36,7 @@
             </table>
         </center>
     </nav>
+
     <nav class="nav_last_cast">
         <center>
             <div id="row" class="row">
@@ -45,7 +46,26 @@
     <nav class="old_cast">
         <div id="old_cast"></div>
     </nav>
+    <div class="navigation_list" id="navigation_list">
+        <center>
+            <table>
+                <tr>
+                    <td>
+                        <div id='anterior_button' class="header_button" onclick='InitHome(-20)'>
+                            <div>Anterior</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id='proximo_button' class="header_button" onclick='InitHome(20)'>
+                            <div>Proximo</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
     <nav class="nav_player">
+
         <audio id="pl_instance" ontimeupdate="pl_Update()">
             <source id="pl_instance_source" type="audio/mp3">
         </audio>
@@ -55,7 +75,7 @@
             </center>
             <table>
                 <tr>
-                    <td onclick="pl_play()"><img id="pl_Play" style="opacity: 0.6;" src="./home/img/play.png"
+                    <td onclick="pl_play()"><img id="pl_Play" style="opacity: 0.6;" src="../home/img/play.png"
                             width="30px"></td>
                     <td>
                         <div class="pl_ScrollBar_holder">
@@ -66,11 +86,11 @@
                         <div id="pl_Timer" class="pl_Timer"></div>
                     </td>
                     <td id="pl_Download" title="Baixe o arquivo de áudio">
-                        <img id="pl_Play" style="opacity: 0.6; margin-left: 20px;" src="./home/img/download.png"
+                        <img id="pl_Play" style="opacity: 0.6; margin-left: 20px;" src="../home/img/download.png"
                             width="30px">
                     </td>
                     <td id="pl_Close" onclick="playerClose()">
-                        <img id="pl_Play" style="opacity: 0.6; margin-left: 20px;" src="./home/img/close.png"
+                        <img id="pl_Play" style="opacity: 0.6; margin-left: 20px;" src="../home/img/close.png"
                             width="30px">
                     </td>
                 </tr>
@@ -79,6 +99,7 @@
     </nav>
     <script>
         pl_Init();
+        InitHome();
     </script>
 
 
