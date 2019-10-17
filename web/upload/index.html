@@ -2,8 +2,9 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="./css/default-style.css">
-    <link rel="stylesheet" type="text/css" href="./css/player.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/default-style.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/player.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/index.css">
     <link rel="stylesheet" type="text/css" href="./css/index.css">
     <script type="text/javascript" src="../login/js/crypto-js.js"></script>
     <script type="text/javascript" src="../login/js/bcypher.js"></script>
@@ -50,7 +51,8 @@
                     <tr>
                         <td>
                             <center>
-                                <input class="upload_inputs" id="description_input" type='text' placeholder="Descrição">
+                                <textarea class="upload_inputs upload_Descr" id="description_input" type='text'
+                                    placeholder="Descrição"></textarea>
                             </center>
                         </td>
                     </tr>
@@ -76,12 +78,13 @@
                     <tr>
                         <td>
                             <center>
-                                <div id="drop-area-img" class="drop_region" ondrop="dropFileImg(event)"
+                                <div id="drop-area-img" class="drop_region-img" ondrop="dropFileImg(event)"
                                     ondragover="dragFile(event);" onclick="clickFileImg()">
                                     <p>Solte o Arquivo de Imagem aqui</p>
                                     <p>ou clique para selecionar um.</p>
                                     <p>Formatos: PNG (1280px X 720px)</p>
                                 </div>
+
                             </center>
                         </td>
                     </tr>

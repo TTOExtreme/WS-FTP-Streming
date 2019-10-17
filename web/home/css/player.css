@@ -1,4 +1,5 @@
 .pl_ScrollBar {
+    cursor: pointer;
     --scroll: 0%;
     background: linear-gradient(to right,rgb(152, 228, 208) var(--scroll),transparent 0);
     width: calc(100vw - 290px);
@@ -25,4 +26,7 @@
     margin: 0;
     padding: 0;
     border: 0;
+}
+.pl_button{
+    cursor: pointer;
 }

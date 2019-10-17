@@ -38,13 +38,13 @@ body{
     border-radius: 5px;
 }
 .upload_holder {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 550px;
     border: 5px solid #e0e0e0;
     box-shadow: -5px 5px 3px #30303050;
     background-color: #c5c1c1f0;
     border-radius: 25px;
-    transform: translate(calc(50vw - 205px), calc(50vh - 205px));
+    transform: translate(calc(50vw - 250px), calc(50vh - 275px));
 }
 .upload {
     width: 95%;
@@ -62,11 +62,28 @@ body{
     border: 1px dotted;
     /* padding-top: 33px; */
 }
+
+.drop_region-img{
+    overflow: hidden;
+    cursor: pointer;
+    max-width: 1280px;
+    max-height: 720px;
+    width: 350px;
+    height: 196.7px;
+    border: 1px dotted;
+    /* padding-top: 33px; */
+}
 .upload_table{
     padding-right: 5px;
 }
 .upload_inputs{
     width: 90%;
+}
+.drop-area-img-preview{
+    width: 100%;
+    /* height: 100%; */
+    /* margin-top: -360px; */
+    background-size: cover;
 }
 
 
@@ -123,3 +140,8 @@ body{
   transform: translate(50%,50%) rotate(90deg);
   }
   
+
+.upload_Descr{
+    resize: none;
+    height: 80px;
+}

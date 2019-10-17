@@ -74,10 +74,12 @@ body{
 .col-3 {width: 100%; height: 150px;}
 .col-4 {width: 100%;height: 150px;}
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 721px) {
   /* For mobile phones: */
   [class*="col-1"] {
     height:300px;
+    width:100%;
+   
   }
   [class*="col-2"] {
     height:150px;
@@ -106,8 +108,8 @@ body{
     overflow: hidden;
     background-size: cover;
     position: relative;
-    max-width: 600px;
-    min-width: 250px;
+    /* max-width: 1280px; */
+    min-width: 360px;
     height: 300px;
     border: 5px solid #e0e0e0;
     box-shadow: -5px 5px 3px #30303050;
@@ -142,7 +144,7 @@ body{
     overflow: hidden;
     background-size: cover;
     position: relative;
-    max-width: 600px;
+    /* max-width: 600px; */
     /* min-width: 250px; */
     /* height: 150px; */
     border-radius: 25px;
@@ -185,6 +187,7 @@ body{
 }
 .list_cast_img{
     /* overflow: hidden; */
+    cursor: pointer;
     padding: 0;
     background-size: cover;
     position: absolute;
@@ -205,6 +208,7 @@ body{
 }   
 
 .play_on_img{
+    cursor: pointer;
     position: absolute;
     opacity: .5;
     left: 50%;

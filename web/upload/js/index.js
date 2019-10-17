@@ -22,7 +22,14 @@ function initUploadArea() {
     dropArea.addEventListener('dragenter', preventDefaults, false)
     dropArea.addEventListener('dragleave', preventDefaults, false)
     dropArea.addEventListener('dragover', preventDefaults, false)
-    dropArea.addEventListener('drop', preventDefaults, false)
+    //dropArea.addEventListener('drop', preventDefaults, false)
+
+    dropArea = document.getElementById('drop-area-img');
+
+    dropArea.addEventListener('dragenter', preventDefaults, false)
+    dropArea.addEventListener('dragleave', preventDefaults, false)
+    dropArea.addEventListener('dragover', preventDefaults, false)
+    //dropArea.addEventListener('drop', preventDefaults, false)
 }
 
 
@@ -54,7 +61,18 @@ function clickFileImg() {
     input.onchange = e => {
         fileImg = e.target.files[0];
         //fileAudio = ev.dataTransfer.items[0].getAsFile();
-        document.getElementById("drop-area-img").innerHTML = "<p>Arquivo selecionado: " + fileImg.name + "</p>";
+
+        document.getElementById("drop-area-img").innerHTML = "<img id='drop-area-img-preview' class='drop-area-img-preview'>";
+        setTimeout(() => {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById("drop-area-img-preview");
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(fileImg);
+        }, 500);
+        //document.getElementById("drop-area-img").innerHTML = "<p>Arquivo selecionado: " + fileImg.name + "</p>";
+
     }
     input.click();
 }
@@ -73,8 +91,17 @@ function dropFile(ev) {
             // If dropped items aren't files, reject them
             if (ev.dataTransfer.items[0].kind === 'file') {
                 fileAudio = ev.dataTransfer.items[0].getAsFile();
-                document.getElementById("drop-area").innerHTML = "<p>Arquivo selecionado: " + fileAudio.name;
-                return;
+                if (fileAudio.type == "audio/mp3" ||
+                    fileAudio.type == "audio/x-ms-wma" ||
+                    fileAudio.type == "audio/wav" ||
+                    fileAudio.type == "audio/ogg") {
+                    document.getElementById("drop-area").innerHTML = "<p>Arquivo selecionado: " + fileAudio.name;
+                    return;
+
+                } else {
+                    alert("Formato de arquivo aceito: MP3, WAV, OGG, WMA");
+                    fileAudio = undefined;
+                }
             }
         }
     }
@@ -83,12 +110,28 @@ function dropFile(ev) {
 function dropFileImg(ev) {
     ev.preventDefault()
     ev.stopPropagation()
+
     if (ev.dataTransfer.items) {
         for (let i = 0; i < ev.dataTransfer.items.length; i++) {
             if (ev.dataTransfer.items[0].kind === 'file') {
                 fileImg = ev.dataTransfer.items[0].getAsFile();
-                document.getElementById("drop-area-img").innerHTML = "<p>Arquivo selecionado: " + fileImg.name;
-                return;
+                if (fileImg.type == "image/png") {
+                    document.getElementById("drop-area-img").innerHTML = "<img id='drop-area-img-preview' class='drop-area-img-preview'>";
+                    setTimeout(() => {
+                        var reader = new FileReader();
+                        reader.onload = function () {
+                            var output = document.getElementById("drop-area-img-preview");
+                            output.src = reader.result;
+                        };
+                        reader.readAsDataURL(fileImg);
+                    }, 500);
+
+                    //document.getElementById("drop-area-img").innerHTML = "<p>Arquivo selecionado: " + fileImg.name;
+                    return;
+                } else {
+                    alert("Formato de arquivo aceito: PNG");
+                    fileImg = undefined;
+                }
             }
         }
     }

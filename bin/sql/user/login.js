@@ -30,7 +30,7 @@ var colors = require('colors');
 
 function sql(user, pass, ok, error) {
     let sql = "SELECT * FROM WS_Podcast._Users  WHERE `user`='" + user + "' AND `pass`='" + pass + "';";
-    //console.log(colors.green(sql + "\n"));
+    console.log(colors.green(sql + "\n"));
     db.query(sql, function (err, results, fields) {
         if (err) { console.log(colors.red("[ERROR] on " + __dirname + __filename + ":\n") + err); error(data); return; }
         let data = [];

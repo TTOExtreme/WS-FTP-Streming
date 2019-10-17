@@ -20,6 +20,8 @@ function playfile(title, folder) {
     document.getElementById("player").style.bottom = "0px";
     pl_title.innerText = title;
     pl_source.setAttribute("src", ((window.location.pathname.indexOf("list") > 0) ? "." : "") + "./data/" + folder + "/audio.mp3");
+    document.getElementById("pl_Download").setAttribute("href", ((window.location.pathname.indexOf("list") > 0) ? "." : "") + "./data/" + folder + "/audio.mp3");
+    document.getElementById("pl_Download").setAttribute("download", title + ".mp3")
     pl_instance.load();
     pl_instance.play();
     pl_playbutton.setAttribute("src", ((window.location.pathname.indexOf("list") > 0) ? "." : "") + "./home/img/pause.png");
@@ -31,6 +33,7 @@ function playerClose() {
     }
     document.getElementById("player").style.bottom = "";
 }
+
 
 function calculateScroll() {
     let pl_ScrollBar = document.getElementById("pl_ScrollBar");

@@ -55,8 +55,8 @@
             </center>
             <table>
                 <tr>
-                    <td onclick="pl_play()"><img id="pl_Play" style="opacity: 0.6;" src="./home/img/play.png"
-                            width="30px"></td>
+                    <td class="pl_button" onclick="pl_play()"><img id="pl_Play" style="opacity: 0.6;"
+                            src="./home/img/play.png" width="30px"></td>
                     <td>
                         <div class="pl_ScrollBar_holder">
                             <div id="pl_ScrollBar" class="pl_ScrollBar"></div>
@@ -65,11 +65,12 @@
                     <td>
                         <div id="pl_Timer" class="pl_Timer"></div>
                     </td>
-                    <td id="pl_Download" title="Baixe o arquivo de áudio">
-                        <img id="pl_Play" style="opacity: 0.6; margin-left: 20px;" src="./home/img/download.png"
-                            width="30px">
+                    <td class="pl_button" title="Baixe o arquivo de áudio">
+                        <a id="pl_Download">
+                            <img style="opacity: 0.6; margin-left: 20px;" src="./home/img/download.png" width="30px">
+                        </a>
                     </td>
-                    <td id="pl_Close" onclick="playerClose()">
+                    <td class="pl_button" id="pl_Close" onclick="playerClose()">
                         <img id="pl_Play" style="opacity: 0.6; margin-left: 20px;" src="./home/img/close.png"
                             width="30px">
                     </td>
