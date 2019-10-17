@@ -11,6 +11,7 @@ function pl_Init() {
     pl_source = document.getElementById("pl_instance_source");
     pl_title = document.getElementById("pl_title");
     document.getElementById("pl_ScrollBar").addEventListener("click", seek);
+    document.getElementById("pl_volumeBar").addEventListener("click", seekVolume);
 }
 
 function playfile(title, folder) {
@@ -54,11 +55,42 @@ function calculateScroll() {
         pl_timer.innerHTML = TimerFactorate(pl_instance.currentTime, pl_instance.duration);
     }
 }
+function calculateVolume() {
+    let pl_volumeBar = document.getElementById("pl_volumeBar");
+    if (pl_volumeBar) {
+
+        let volume = pl_instance.volume * 100;
+
+        pl_volumeBar.style.setProperty("--scroll", volume + "%");
+
+        //pl_timer.innerHTML = TimerFactorate(pl_instance.currentTime, pl_instance.duration);
+    }
+}
 
 function seek(evt) {
     let percent = (evt.offsetX / this.offsetWidth) * pl_instance.duration;
     let s = pl_instance;
     s.currentTime = percent;
+}
+
+let volShow = false;
+function volumeToggle() {
+    let pl_volumeBar = document.getElementById("pl_volumeBar_bg");
+    if (volShow) {
+        pl_volumeBar.style.bottom = "-200px";
+        pl_volumeBar.style.opacity = "0";
+    } else {
+        pl_volumeBar.style.bottom = "0";
+        pl_volumeBar.style.opacity = "1";
+    }
+    volShow = !volShow;
+}
+
+function seekVolume(evt) {
+    let percent = 1 - (evt.offsetY / this.offsetHeight);
+    let s = pl_instance;
+    s.volume = percent;
+    calculateVolume();
 }
 
 function pl_play() {
@@ -72,6 +104,7 @@ function pl_play() {
 }
 function pl_Update() {
     calculateScroll();
+    calculateVolume();
 }
 
 function TimerFactorate(time, max) {

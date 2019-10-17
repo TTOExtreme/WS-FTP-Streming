@@ -13,6 +13,37 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+.pl_volume{
+    cursor: pointer;
+}
+.pl_volumeBar {
+    cursor: pointer;
+    --scroll: 0%;
+    background: linear-gradient(to top,rgb(152, 228, 208) var(--scroll),transparent 0);
+    width: 10px;
+    height: 100%;
+    /* top: 0px; */
+    z-index: 10;
+}
+.pl_volumeBar_bg{
+    background-color: var(--c2);
+    position: absolute;
+    bottom: -200px;
+    opacity: 0;
+    padding: 5px;
+    padding-bottom: 50px;
+    margin-left: 10px;
+    transition-property: all;
+    transition-duration: 0.8s;
+}
+.pl_volumeBar_holder{
+    background-color: #113311;
+    height: 125px;
+    /* margin-left: 10px; */
+    /* margin-right: 10px; */
+    /* position: absolute; */
+    /* bottom: 10px; */
+}
 .player{
     background-color: var(--c2);
     padding: 5px;
@@ -26,6 +57,14 @@
     margin: 0;
     padding: 0;
     border: 0;
+    color:white;
+    font-size: 18pt;
+}
+.pl_Timer{
+    color:white;
+    font-size: 11pt;
+    margin-left: -10px;
+    margin-right: 10px;
 }
 .pl_button{
     cursor: pointer;

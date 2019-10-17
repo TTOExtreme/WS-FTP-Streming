@@ -67,12 +67,21 @@
                     </td>
                     <td class="pl_button" title="Baixe o arquivo de áudio">
                         <a id="pl_Download">
-                            <img style="opacity: 0.6; margin-left: 20px;" src="./home/img/download.png" width="30px">
+                            <img style="opacity: 0.6;" src="./home/img/download.png" width="30px">
                         </a>
                     </td>
+                    <td>
+                        <div id="pl_volumeBar_bg" class="pl_volumeBar_bg">
+                            <div class="pl_volumeBar_holder">
+                                <div id="pl_volumeBar" class="pl_volumeBar"></div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="pl_volume" onclick="volumeToggle()">
+                        <img style="opacity: 0.6;" src="./home/img/volume.png" width="30px">
+                    </td>
                     <td class="pl_button" id="pl_Close" onclick="playerClose()">
-                        <img id="pl_Play" style="opacity: 0.6; margin-left: 20px;" src="./home/img/close.png"
-                            width="30px">
+                        <img id="pl_Play" style="opacity: 0.6;" src="./home/img/close.png" width="30px">
                     </td>
                 </tr>
             </table>
